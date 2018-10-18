@@ -1,0 +1,7 @@
+# PostgreSQL
+# ------------------------------------------------------------------------------
+POSTGRES_HOST=postgres
+POSTGRES_PORT=5432
+POSTGRES_DB=travel_destacame
+POSTGRES_USER=eWvVPOiUzdjEqtnaNLGdLAwCQkEBROIJ
+POSTGRES_PASSWORD=UQIpFU2ajQzyvK0JFgeUmqwn7vUM8tLCF5rxa3SSM8ayY2FNgMg67YsK7S8mFFMY
