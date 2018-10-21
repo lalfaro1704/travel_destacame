@@ -89,13 +89,6 @@ class SeatBus(models.Model):
         on_delete=models.CASCADE,
         verbose_name=_('seat')
     )
-    passenger = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
-        verbose_name=_('passenger'),
-        blank=True,
-        null=True
-    )
 
 
 class Location(models.Model):
@@ -117,23 +110,116 @@ class Location(models.Model):
         return "{}".format(self.name.capitalize())
 
 
-class Driver(AbstractUser):
-    """Location from/to object."""
+class Driver(models.Model):
+    """Bus driver object."""
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
         editable=False
     )
+    first_name = models.CharField(
+        verbose_name=_('first name'),
+        max_length=30,
+    )
+    last_name = models.CharField(
+        verbose_name=_('last name'),
+        max_length=150
+    )
+    email = models.EmailField(
+        verbose_name=_('email address'),
+        blank=True
+    )
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name=_('is active?')
+    )
+
+    def save(self):
+       self.first_name = self.first_name.upper()
+       self.last_name = self.last_name.upper()
+       super(Driver, self).save()
 
     class Meta:
         verbose_name = _('driver')
         verbose_name_plural = _('drivers')
 
     def __str__(self):
-        return "{} {}".format(self.first_name.capitalize(), self.last_name.capitalize())
+        return "{} {}".format(
+            self.first_name.capitalize(), self.last_name.capitalize()
+        )
 
 
+class Trip(models.Model):
+    """Trip object."""
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+    from_location = models.ForeignKey(
+        Location,
+        on_delete=models.CASCADE,
+        related_name="from_location",
+        verbose_name=_('from')
+    )
+    to_location = models.ForeignKey(
+        Location,
+        on_delete=models.CASCADE,
+        related_name="to_location",
+        verbose_name=_('to')
+    )
+    driver = models.ForeignKey(
+        Driver,
+        on_delete=models.CASCADE,
+        verbose_name=_('driver')
+    )
+    departure = models.DateTimeField(
+        _('departure')
+    )
 
+    class Meta:
+        verbose_name = _('trip')
+        verbose_name_plural = _('trips')
+
+    def __str__(self):
+        return "{} {}".format(
+            self.id, self.departure.date()
+        )
+
+
+class Ticket(models.Model):
+    """Trip object."""
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+    trip = models.ForeignKey(
+        Trip,
+        on_delete=models.CASCADE,
+        verbose_name=_('trip')
+    )
+    seat = models.ForeignKey(
+        SeatBus,
+        on_delete=models.CASCADE,
+        verbose_name=_('seat')
+    )
+    passenger = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        verbose_name=_('passenger'),
+        blank=True,
+        null=True
+    )
+
+    class Meta:
+        verbose_name = _('trip')
+        verbose_name_plural = _('trips')
+
+    def __str__(self):
+        return "{} {} {}".format(
+            self.id, self.trip, self.passenger
+        )
 
 
 

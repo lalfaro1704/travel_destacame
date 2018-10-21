@@ -8,11 +8,6 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class User(AbstractUser):
-    id = models.UUIDField(
-        primary_key=True,
-        default=uuid.uuid4,
-        editable=False
-    )
 
     def __str__(self):
         return "{} {}".format(self.first_name, self.last_name)
