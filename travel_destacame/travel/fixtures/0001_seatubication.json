@@ -1,0 +1,16 @@
+[
+{
+    "model": "travel.seatubication",
+    "pk": 1,
+    "fields": {
+        "ubication": "Ventana"
+    }
+},
+{
+    "model": "travel.seatubication",
+    "pk": 2,
+    "fields": {
+        "ubication": "Pasillo"
+    }
+}
+]

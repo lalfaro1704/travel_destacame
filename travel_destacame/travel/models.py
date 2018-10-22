@@ -18,10 +18,6 @@ class SeatUbication(models.Model):
         verbose_name=_('ubication')
     )
 
-    def save(self):
-       self.ubication = self.ubication.upper()
-       super(SeatUbication, self).save()
-
     class Meta:
         verbose_name = _('seat ubication')
         verbose_name_plural = _('seat ubications')
@@ -68,6 +64,10 @@ class Bus(models.Model):
         blank=True,
         null=True
     )
+
+    class Meta:
+        verbose_name = _('bus')
+        verbose_name_plural = _('buses')
 
     def save(self):
        self.serial = self.serial.upper()
@@ -127,7 +127,8 @@ class Driver(models.Model):
     )
     email = models.EmailField(
         verbose_name=_('email address'),
-        blank=True
+        blank=True,
+        null=True
     )
     is_active = models.BooleanField(
         default=True,
@@ -182,8 +183,8 @@ class Trip(models.Model):
         verbose_name_plural = _('trips')
 
     def __str__(self):
-        return "{} {}".format(
-            self.id, self.departure.date()
+        return "{}-{} {}".format(
+            self.from_location, self.from_location, self.departure.date()
         )
 
 
@@ -213,8 +214,8 @@ class Ticket(models.Model):
     )
 
     class Meta:
-        verbose_name = _('trip')
-        verbose_name_plural = _('trips')
+        verbose_name = _('ticket')
+        verbose_name_plural = _('tickets')
 
     def __str__(self):
         return "{} {} {}".format(
