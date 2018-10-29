@@ -169,6 +169,11 @@ class Trip(models.Model):
         related_name="to_location",
         verbose_name=_('to')
     )
+    bus = models.ForeignKey(
+        Bus,
+        on_delete=models.CASCADE,
+        verbose_name=_('bus')
+    )
     driver = models.ForeignKey(
         Driver,
         on_delete=models.CASCADE,
@@ -184,7 +189,7 @@ class Trip(models.Model):
 
     def __str__(self):
         return "{}-{} {}".format(
-            self.from_location, self.from_location, self.departure.date()
+            self.from_location, self.from_location, self.departure
         )
 
 
