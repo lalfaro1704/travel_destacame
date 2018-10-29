@@ -60,7 +60,13 @@ class TripStatsSerializer(serializers.BaseSerializer):
         }
 
 
+class BusStatsSerializer(serializers.BaseSerializer):
 
+    def to_representation(self, obj):
+        return {
+            'bus': BusSerializer(obj.bus).data,
+            'capacidad_vendida': obj.capacidad_vendida
+        }
 
 
 

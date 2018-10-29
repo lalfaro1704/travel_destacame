@@ -1,6 +1,6 @@
 import coreapi
 
-from django.db.models import Count, OuterRef, Subquery, IntegerField, F
+from django.db.models import Count, OuterRef, Subquery, FloatField, F
 from django.utils.translation import ugettext_lazy as _
 
 from rest_framework import viewsets, status
@@ -11,7 +11,7 @@ from rest_framework.filters import BaseFilterBackend, OrderingFilter
 from travel_destacame.travel.models import (Bus, Location, Trip, Ticket)
 
 # my serializers here
-from .serializers import (BusSerializer, TripSerializer, TripStatsSerializer)
+from .serializers import (BusSerializer, TripSerializer, TripStatsSerializer, BusStatsSerializer)
 
 
 class BusFilterBackend(BaseFilterBackend):
@@ -73,7 +73,7 @@ class TripStatsViewSet(viewsets.ReadOnlyModelViewSet):
     def list(self, request):
 
         """ external queryset """
-        state_query = (
+        tickets_query = (
             Ticket.objects.filter(
                 trip__from_location=OuterRef('from_location'),
                 trip__to_location=OuterRef('to_location')
@@ -92,8 +92,35 @@ class TripStatsViewSet(viewsets.ReadOnlyModelViewSet):
         ).annotate(
             dcount=Count('id')
         ).annotate(
-            promedio=Subquery(state_query, output_field=IntegerField()) / F('dcount')
+            promedio=Subquery(tickets_query, output_field=FloatField()) / F('dcount')
         )
+
+        serializer = self.serializer_class(trips, many=True)
+        return Response(serializer.data)
+
+
+class BusStatsViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Bus.objects.all()
+    serializer_class = BusStatsSerializer
+
+    def list(self, request):
+
+        """ external queryset """
+        tickets_query = (
+            Ticket.objects.filter(
+                trip__id=OuterRef('id')
+            ).values(
+                'trip__from_location',
+                'trip__to_location'
+            ).annotate(
+                dcount=Count('id')
+            ).values('dcount')[:1]
+        )
+
+        """ internal queryset """
+        trips = Trip.objects.annotate(
+            capacidad_vendida=Subquery(tickets_query, output_field=FloatField())
+        ).filter(capacidad_vendida__isnull=False)
 
         serializer = self.serializer_class(trips, many=True)
         return Response(serializer.data)
