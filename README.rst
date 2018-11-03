@@ -15,20 +15,32 @@ Filtrar a todos los buses de un trayecto con más del 0% de su capacidad vendida
 Para la implementación hay que utilizar el Django y su ORM.
 
 
-Pre-requisitos 📋
-=================
+Instalación 🔧
+==============
 
-* Python 3:
+* Python 3: ::
+
+	Mac:
+		brew install python
+
+	Debian: ::
+		cd /tmp/
+		sudo apt-get install python3-dev libffi-dev libssl-dev zlib1g-dev
+		wget https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tgz
+		tar xvf Python-3.6.0.tgz
+		cd Python-3.6.0
+		./configure --enable-optimizations
+		make -j8
+		sudo make altinstall
+		python3.6
 
 * Pip: ::
 
 	Mac:
-	----
 		$ brew install pip
 		$ sudo pip install --upgrade pip
 
 	Debian:
-	-------
 		$ sudo apt-get install python-pip
 		$ sudo pip install --upgrade pip
 
@@ -40,10 +52,8 @@ Pre-requisitos 📋
 	Debian:
 		$ sudo apt-get virtualenv
 
-Instalación 🔧
-==============
-
-Entorno virtual con la versión de python 3.6: ::
+	Entorno virtual con la versión de python 3.6:
+	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 	$ virtualenv -p python3.6 .venv
 
@@ -104,8 +114,8 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones
 ## Licencia 📄
 
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
-     :target: https://github.com/pydanny/cookiecutter-django/
-     :alt: Built with Cookiecutter Django
+	 :target: https://github.com/pydanny/cookiecutter-django/
+	 :alt: Built with Cookiecutter Django
 
 Este proyecto está bajo :Licencia: MIT
 
