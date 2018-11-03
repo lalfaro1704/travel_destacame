@@ -23,31 +23,29 @@ Pre-requisitos 📋
 * Pip: ::
 
 	Mac:
+	----
 		$ brew install pip
 		$ sudo pip install --upgrade pip
 
 	Debian:
+	-------
 		$ sudo apt-get install python-pip
 		$ sudo pip install --upgrade pip
 
-* Virtualenv.
+* Virtualenv: ::
 
-_Mac:_
-```
-$ brew install virtualenv
-```
+	Mac:
+		$ brew install virtualenv
 
-_Debian:_
-```
-$ sudo apt-get virtualenv
-```
+	Debian:
+		$ sudo apt-get virtualenv
 
-### Instalación 🔧
+Instalación 🔧
+==============
 
-_Instalamos dentro de la raiz del proyecto el entorno virtual con la versión de python 3.6:_
-```
-$ virtualenv -p python3.6 .venv
-```
+Entorno virtual con la versión de python 3.6: ::
+
+	$ virtualenv -p python3.6 .venv
 
 -Levantamos el entorno virtual:-
 ```
