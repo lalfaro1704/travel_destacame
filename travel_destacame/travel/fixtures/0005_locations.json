@@ -1,0 +1,30 @@
+[
+{
+  "model": "travel.location",
+  "pk": 1,
+  "fields": {
+    "name": "SANTIAGO"
+  }
+},
+{
+  "model": "travel.location",
+  "pk": 2,
+  "fields": {
+    "name": "OSORNO"
+  }
+},
+{
+  "model": "travel.location",
+  "pk": 3,
+  "fields": {
+    "name": "VI\u00d1A DEL MAR"
+  }
+},
+{
+  "model": "travel.location",
+  "pk": 4,
+  "fields": {
+    "name": "RENCA"
+  }
+}
+]

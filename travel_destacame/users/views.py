@@ -18,24 +18,21 @@ User = get_user_model()
 
 
 class UserViewSet(viewsets.ModelViewSet):
+    """
+    retrieve:
+    Usuario por ID.
+
+    list:
+    Lista de usuarios.
+
+    create:
+    Crea un nuevo usuario.
+
+    update:
+    Actualiza los valores de un usuario.
+
+    delete:
+    Borra un usuario.
+    """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

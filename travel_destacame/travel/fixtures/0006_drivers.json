@@ -1,0 +1,22 @@
+[
+{
+  "model": "travel.driver",
+  "pk": "2a1d7602-fc67-4551-bd55-cdf6606ad5f4",
+  "fields": {
+    "first_name": "CHOFER",
+    "last_name": "DESTACAME",
+    "email": "luipi.alfaro@gmail.com",
+    "is_active": true
+  }
+},
+{
+  "model": "travel.driver",
+  "pk": "d14fdb16-dedd-4986-b7fc-f367016a60ea",
+  "fields": {
+    "first_name": "AXEL",
+    "last_name": "DIAZ",
+    "email": "diaz.axelio@destacame.cl",
+    "is_active": true
+  }
+}
+]

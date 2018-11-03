@@ -1,0 +1,46 @@
+[
+{
+  "model": "travel.trip",
+  "pk": "8356447b-5e4b-4121-a57e-7af16893d0c0",
+  "fields": {
+    "from_location": 2,
+    "to_location": 4,
+    "bus": "50dfa79a-37fa-44bf-b529-42d0e336f6aa",
+    "driver": "2a1d7602-fc67-4551-bd55-cdf6606ad5f4",
+    "departure": "2018-10-28T20:51:15Z"
+  }
+},
+{
+  "model": "travel.trip",
+  "pk": "e1d8829b-521c-4c69-b00b-6e865ddb362e",
+  "fields": {
+    "from_location": 1,
+    "to_location": 3,
+    "bus": "b55b8b2f-7856-4003-93cc-4004ad614ca9",
+    "driver": "2a1d7602-fc67-4551-bd55-cdf6606ad5f4",
+    "departure": "2018-10-26T13:00:00Z"
+  }
+},
+{
+  "model": "travel.trip",
+  "pk": "e759e588-e309-4d5e-8334-02f60c8a2d41",
+  "fields": {
+    "from_location": 1,
+    "to_location": 3,
+    "bus": "50dfa79a-37fa-44bf-b529-42d0e336f6aa",
+    "driver": "d14fdb16-dedd-4986-b7fc-f367016a60ea",
+    "departure": "2018-10-26T19:00:00Z"
+  }
+},
+{
+  "model": "travel.trip",
+  "pk": "f8ebdd3a-6f38-4967-b2cb-d78d272ceee0",
+  "fields": {
+    "from_location": 1,
+    "to_location": 2,
+    "bus": "b55b8b2f-7856-4003-93cc-4004ad614ca9",
+    "driver": "d14fdb16-dedd-4986-b7fc-f367016a60ea",
+    "departure": "2018-10-29T16:00:00Z"
+  }
+}
+]

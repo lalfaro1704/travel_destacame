@@ -7,7 +7,7 @@ from django.views import defaults as default_views
 
 from rest_framework_swagger.views import get_swagger_view
 
-schema_view = get_swagger_view(title='Documentation for RinnoManager')
+schema_view = get_swagger_view(title='Documentación y uso de APIs para Travel destacame')
 app_name = "travel_destacame"
 
 urlpatterns = [

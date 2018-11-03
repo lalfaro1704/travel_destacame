@@ -1,0 +1,16 @@
+[
+{
+  "model": "travel.bus",
+  "pk": "50dfa79a-37fa-44bf-b529-42d0e336f6aa",
+  "fields": {
+    "serial": "XCD-93Y"
+  }
+},
+{
+  "model": "travel.bus",
+  "pk": "b55b8b2f-7856-4003-93cc-4004ad614ca9",
+  "fields": {
+    "serial": "JFIOE-SDF"
+  }
+}
+]

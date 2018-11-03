@@ -1,0 +1,56 @@
+[
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "password": "argon2$argon2i$v=19$m=512,t=2,p=2$bFFRU0FJNzlydlEx$u2Zmuf6f0BekV1w6pOm5MA",
+    "last_login": "2018-11-03T15:39:35Z",
+    "is_superuser": true,
+    "username": "lalfaro",
+    "first_name": "Luis",
+    "last_name": "Alfaro",
+    "email": "luipi.alfaro@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2018-10-22T00:34:46Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 3,
+  "fields": {
+    "password": "argon2$argon2i$v=19$m=512,t=2,p=2$VjlWSWd0MDNvUEV2$K7mSNqULp25eqWIOQEMVDg",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "cpineda",
+    "first_name": "Carol",
+    "last_name": "Pineda",
+    "email": "carol.pineda@destacame.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-10-26T19:16:25Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.user",
+  "pk": 4,
+  "fields": {
+    "password": "argon2$argon2i$v=19$m=512,t=2,p=2$ckxwMlFLT1BBSWdV$0fPInd2WyMQMY+hIjH0vIA",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "jmarquez",
+    "first_name": "Jorge",
+    "last_name": "Marquez",
+    "email": "jmarquez@destacame.cl",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2018-10-26T19:16:58Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

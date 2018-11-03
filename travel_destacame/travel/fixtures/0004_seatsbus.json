@@ -1,0 +1,162 @@
+[
+{
+  "model": "travel.seatbus",
+  "pk": 1,
+  "fields": {
+    "bus": "50dfa79a-37fa-44bf-b529-42d0e336f6aa",
+    "seat": 1
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 2,
+  "fields": {
+    "bus": "50dfa79a-37fa-44bf-b529-42d0e336f6aa",
+    "seat": 2
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 3,
+  "fields": {
+    "bus": "50dfa79a-37fa-44bf-b529-42d0e336f6aa",
+    "seat": 3
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 4,
+  "fields": {
+    "bus": "50dfa79a-37fa-44bf-b529-42d0e336f6aa",
+    "seat": 4
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 5,
+  "fields": {
+    "bus": "50dfa79a-37fa-44bf-b529-42d0e336f6aa",
+    "seat": 5
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 6,
+  "fields": {
+    "bus": "50dfa79a-37fa-44bf-b529-42d0e336f6aa",
+    "seat": 6
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 7,
+  "fields": {
+    "bus": "50dfa79a-37fa-44bf-b529-42d0e336f6aa",
+    "seat": 7
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 8,
+  "fields": {
+    "bus": "50dfa79a-37fa-44bf-b529-42d0e336f6aa",
+    "seat": 8
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 9,
+  "fields": {
+    "bus": "50dfa79a-37fa-44bf-b529-42d0e336f6aa",
+    "seat": 9
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 10,
+  "fields": {
+    "bus": "50dfa79a-37fa-44bf-b529-42d0e336f6aa",
+    "seat": 10
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 11,
+  "fields": {
+    "bus": "b55b8b2f-7856-4003-93cc-4004ad614ca9",
+    "seat": 1
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 12,
+  "fields": {
+    "bus": "b55b8b2f-7856-4003-93cc-4004ad614ca9",
+    "seat": 2
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 13,
+  "fields": {
+    "bus": "b55b8b2f-7856-4003-93cc-4004ad614ca9",
+    "seat": 3
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 14,
+  "fields": {
+    "bus": "b55b8b2f-7856-4003-93cc-4004ad614ca9",
+    "seat": 4
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 15,
+  "fields": {
+    "bus": "b55b8b2f-7856-4003-93cc-4004ad614ca9",
+    "seat": 5
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 16,
+  "fields": {
+    "bus": "b55b8b2f-7856-4003-93cc-4004ad614ca9",
+    "seat": 6
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 17,
+  "fields": {
+    "bus": "b55b8b2f-7856-4003-93cc-4004ad614ca9",
+    "seat": 7
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 18,
+  "fields": {
+    "bus": "b55b8b2f-7856-4003-93cc-4004ad614ca9",
+    "seat": 8
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 19,
+  "fields": {
+    "bus": "b55b8b2f-7856-4003-93cc-4004ad614ca9",
+    "seat": 9
+  }
+},
+{
+  "model": "travel.seatbus",
+  "pk": 20,
+  "fields": {
+    "bus": "b55b8b2f-7856-4003-93cc-4004ad614ca9",
+    "seat": 10
+  }
+}
+]

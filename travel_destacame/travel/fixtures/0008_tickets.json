@@ -1,0 +1,29 @@
+[
+{
+  "model": "travel.ticket",
+  "pk": "1910cf69-e51b-4b41-b48f-8ea17b2c3055",
+  "fields": {
+    "trip": "e1d8829b-521c-4c69-b00b-6e865ddb362e",
+    "seat": 12,
+    "passenger": 1
+  }
+},
+{
+  "model": "travel.ticket",
+  "pk": "30e92ad5-5333-43d4-b3f9-1d4d28054768",
+  "fields": {
+    "trip": "e1d8829b-521c-4c69-b00b-6e865ddb362e",
+    "seat": 11,
+    "passenger": 4
+  }
+},
+{
+  "model": "travel.ticket",
+  "pk": "fc81ddb7-0c3e-4ab1-bd94-0797bc9a4a7c",
+  "fields": {
+    "trip": "e759e588-e309-4d5e-8334-02f60c8a2d41",
+    "seat": 1,
+    "passenger": 3
+  }
+}
+]

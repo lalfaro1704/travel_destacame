@@ -102,6 +102,14 @@ Deployment 📦
 
 	$ ./manage.py runserver
 
+* Para ingresar al administrador: ::
+
+	http://localhost:8000
+
+* Para hacer uso de las APIs y leer la respectiva documentación de cada una de ellas: ::
+
+	http://localhost:8000/docs
+
 Versionado 📌
 =============
 

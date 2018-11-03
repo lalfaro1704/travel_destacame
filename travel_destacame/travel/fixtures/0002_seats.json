@@ -1,0 +1,82 @@
+[
+{
+  "model": "travel.seat",
+  "pk": 1,
+  "fields": {
+    "number": 1,
+    "seat_ubication": 1
+  }
+},
+{
+  "model": "travel.seat",
+  "pk": 2,
+  "fields": {
+    "number": 2,
+    "seat_ubication": 1
+  }
+},
+{
+  "model": "travel.seat",
+  "pk": 3,
+  "fields": {
+    "number": 3,
+    "seat_ubication": 1
+  }
+},
+{
+  "model": "travel.seat",
+  "pk": 4,
+  "fields": {
+    "number": 4,
+    "seat_ubication": 1
+  }
+},
+{
+  "model": "travel.seat",
+  "pk": 5,
+  "fields": {
+    "number": 5,
+    "seat_ubication": 1
+  }
+},
+{
+  "model": "travel.seat",
+  "pk": 6,
+  "fields": {
+    "number": 1,
+    "seat_ubication": 2
+  }
+},
+{
+  "model": "travel.seat",
+  "pk": 7,
+  "fields": {
+    "number": 2,
+    "seat_ubication": 2
+  }
+},
+{
+  "model": "travel.seat",
+  "pk": 8,
+  "fields": {
+    "number": 3,
+    "seat_ubication": 2
+  }
+},
+{
+  "model": "travel.seat",
+  "pk": 9,
+  "fields": {
+    "number": 4,
+    "seat_ubication": 2
+  }
+},
+{
+  "model": "travel.seat",
+  "pk": 10,
+  "fields": {
+    "number": 5,
+    "seat_ubication": 2
+  }
+}
+]
