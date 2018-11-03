@@ -1,6 +1,5 @@
 Travel destacame
 ================
-::
 	Una agencia de buses necesita una plataforma para gestionar sus viajes. El sistema debe permitir que se ingresen diversos trayectos. Cada trayecto tendrá varios buses asignados a distintos horarios. Cada bus tendrá un solo chofer y varios pasajeros asignados a sus asientos. Todos los buses tienen la misma capacidad de 10 pasajeros sentados. Los asientos son enumerados y se reservan para cada pasajero. El sistema debe soportar el ingreso de pasajeros a un trayecto y horario en particular, ademas de permitir la asignación de choferes a sus respectivos buses.
 
 	Modelo de datos
@@ -53,38 +52,54 @@ Instalación 🔧
 		$ sudo apt-get virtualenv
 
 	* Entorno virtual con la versión de python 3.6:
-
 		$ virtualenv -p python3.6 .venv
-
 		$ source .venv/bin/activate
 
 Variables de entorno y variables globales ⚙️
 ============================================
-::
-	* Mac:
-		$ source .envs/.local/.django; export $(grep -v '^#' .envs/.local/.django | xargs -0)
 
-	* Debian:
-		$ source .envs/.local/.django; export $(grep -v '^#' .env/local.sh | xargs -d '\n')
+* Mac: ::
+	$ source .envs/.local/.django; export $(grep -v '^#' .envs/.local/.django | xargs -0)
+
+* Debian: ::
+	$ source .envs/.local/.django; export $(grep -v '^#' .env/local.sh | xargs -d '\n')
 
 Deployment 📦
 =============
-::
-	* Base de datos
-		* Mac:
-			$ createdb travel
 
-		* Debian:
-			$ sudo su postgres -c "createdb travel"
+* Base de datos ::
+	* Mac:
+		$ createdb travel
 
-	* dependencias del proyecto:
-		$ pip install -r requirements/local.txt
+	* Debian:
+		$ sudo su postgres -c "createdb travel"
+
+	$ ./manage.py migrate
+
+* dependencias del proyecto: ::
+	$ pip install -r requirements/local.txt
+
+* superusuario y token de acceso: ::
+	$ ./manage.py createsuperuser
+		Username:
+		Email address:
+		Password:
+		Password (again):
+
+	$ ./manage.py drf_create_token <USERNAME_CREADO>
+
+* Datos iniciales de la base de datos: ::
+	$ ./manage.py loaddata travel_destacame/users/fixtures/*.json
+	$ ./manage.py loaddata travel_destacame/travel/fixtures/*.json
+
+* runserver: ::
+	$ ./manage.py runserver
 
 Versionado 📌
 =============
-::
-	* Git:
-		* https://github.com/lalfaro1704/travel_destacame.git
+
+* Git: ::
+	* https://github.com/lalfaro1704/travel_destacame.git
 
 Autor ✒️
 ========
@@ -93,10 +108,6 @@ Autor ✒️
 
 Licencia 📄
 ===========
-
-.. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
-	 :target: https://github.com/pydanny/cookiecutter-django/
-	 :alt: Built with Cookiecutter Django
 
 :Licencia: MIT
 
