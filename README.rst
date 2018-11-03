@@ -1,7 +1,7 @@
 Travel destacame
 ================
 
-_Una agencia de buses necesita una plataforma para gestionar sus viajes. El sistema debe permitir que se ingresen diversos trayectos. Cada trayecto tendrá varios buses asignados a distintos horarios. Cada bus tendrá un solo chofer y varios pasajeros asignados a sus asientos. Todos los buses tienen la misma capacidad de 10 pasajeros sentados. Los asientos son enumerados y se reservan para cada pasajero. El sistema debe soportar el ingreso de pasajeros a un trayecto y horario en particular, ademas de permitir la asignación de choferes a sus respectivos buses.
+Una agencia de buses necesita una plataforma para gestionar sus viajes. El sistema debe permitir que se ingresen diversos trayectos. Cada trayecto tendrá varios buses asignados a distintos horarios. Cada bus tendrá un solo chofer y varios pasajeros asignados a sus asientos. Todos los buses tienen la misma capacidad de 10 pasajeros sentados. Los asientos son enumerados y se reservan para cada pasajero. El sistema debe soportar el ingreso de pasajeros a un trayecto y horario en particular, ademas de permitir la asignación de choferes a sus respectivos buses.
 
 Modelo de datos
 Escriba a continuación las tablas que utilizaría para resolver este problema con los campos y llaves de éstas. Intente hacer el sistema lo más robusto posible, pero sin incluir datos adicionales a los que se plantean acá.
@@ -12,7 +12,7 @@ Si usted estuviera resolviendo el problema de la agencia de buses implementando 
 CRUD pasajeros, choferes, trayectos, buses.
 Listar a los trayectos junto a su promedio de pasajeros.
 Filtrar a todos los buses de un trayecto con más del 0% de su capacidad vendida.
-Para la implementación hay que utilizar el Django y su ORM._
+Para la implementación hay que utilizar el Django y su ORM.
 
 
 Pre-requisitos 📋
@@ -20,13 +20,15 @@ Pre-requisitos 📋
 
 * Python 3:
 
-* Pip. ::
+* Pip: ::
+
 	Mac:
-	$ brew install pip
-	$ sudo pip install --upgrade pip
+		$ brew install pip
+		$ sudo pip install --upgrade pip
+
 	Debian:
-	$ sudo apt-get install python-pip
-	$ sudo pip install --upgrade pip
+		$ sudo apt-get install python-pip
+		$ sudo pip install --upgrade pip
 
 * Virtualenv.
 
