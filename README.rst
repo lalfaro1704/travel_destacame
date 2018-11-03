@@ -1,4 +1,5 @@
-# Título del Proyecto
+Travel destacame
+================
 
 _Una agencia de buses necesita una plataforma para gestionar sus viajes. El sistema debe permitir que se ingresen diversos trayectos. Cada trayecto tendrá varios buses asignados a distintos horarios. Cada bus tendrá un solo chofer y varios pasajeros asignados a sus asientos. Todos los buses tienen la misma capacidad de 10 pasajeros sentados. Los asientos son enumerados y se reservan para cada pasajero. El sistema debe soportar el ingreso de pasajeros a un trayecto y horario en particular, ademas de permitir la asignación de choferes a sus respectivos buses.
 
@@ -14,25 +15,18 @@ Filtrar a todos los buses de un trayecto con más del 0% de su capacidad vendida
 Para la implementación hay que utilizar el Django y su ORM._
 
 
-### Pre-requisitos 📋
+Pre-requisitos 📋
+=================
 
 * Python 3:
 
-* Pip.
-Mac:
-```
-$ brew install pip
-```
-```
-$ sudo pip install --upgrade pip
-```
-Debian:
-```
-$ sudo apt-get install python-pip
-```
-```
-$ sudo pip install --upgrade pip
-```
+* Pip. ::
+	Mac:
+	$ brew install pip
+	$ sudo pip install --upgrade pip
+	Debian:
+	$ sudo apt-get install python-pip
+	$ sudo pip install --upgrade pip
 
 * Virtualenv.
 
