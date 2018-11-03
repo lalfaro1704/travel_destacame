@@ -1,86 +1,120 @@
-Travel Destacame
-================
+# Título del Proyecto
 
-Test para destacame.cl
+_Una agencia de buses necesita una plataforma para gestionar sus viajes. El sistema debe permitir que se ingresen diversos trayectos. Cada trayecto tendrá varios buses asignados a distintos horarios. Cada bus tendrá un solo chofer y varios pasajeros asignados a sus asientos. Todos los buses tienen la misma capacidad de 10 pasajeros sentados. Los asientos son enumerados y se reservan para cada pasajero. El sistema debe soportar el ingreso de pasajeros a un trayecto y horario en particular, ademas de permitir la asignación de choferes a sus respectivos buses.
+
+Modelo de datos
+Escriba a continuación las tablas que utilizaría para resolver este problema con los campos y llaves de éstas. Intente hacer el sistema lo más robusto posible, pero sin incluir datos adicionales a los que se plantean acá.
+
+Backend
+Si usted estuviera resolviendo el problema de la agencia de buses implementando una aplicación web que incluya las siguientes funcionalidades:
+
+CRUD pasajeros, choferes, trayectos, buses.
+Listar a los trayectos junto a su promedio de pasajeros.
+Filtrar a todos los buses de un trayecto con más del 0% de su capacidad vendida.
+Para la implementación hay que utilizar el Django y su ORM._
+
+
+### Pre-requisitos 📋
+
+* Python 3:
+
+* Pip.
+Mac:
+```
+$ brew install pip
+```
+```
+$ sudo pip install --upgrade pip
+```
+Debian:
+```
+$ sudo apt-get install python-pip
+```
+```
+$ sudo pip install --upgrade pip
+```
+
+* Virtualenv.
+
+_Mac:_
+```
+$ brew install virtualenv
+```
+
+_Debian:_
+```
+$ sudo apt-get virtualenv
+```
+
+### Instalación 🔧
+
+_Instalamos dentro de la raiz del proyecto el entorno virtual con la versión de python 3.6:_
+```
+$ virtualenv -p python3.6 .venv
+```
+
+-Levantamos el entorno virtual:-
+```
+$ source .venv/bin/activate
+```
+
+## Variables de entorno y variables globales ⚙️
+-Mac:_
+```
+$ source .envs/.local/.django; export $(grep -v '^#' .envs/.local/.django | xargs -0)
+```
+
+-Debian:_
+```
+$ source .envs/.local/.django; export $(grep -v '^#' .env/local.sh | xargs -d '\n')
+```
+
+## Deployment 📦
+
+-Instalamos las dependencias del proyecto:-
+```
+$ pip install -r requirements/local.txt
+```
+
+_Base de datos_
+_Mac:_
+```
+$ createdb travel
+```
+
+_Debian:_
+```
+sudo su postgres -c "createdb travel"
+```
+
+## Construido con 🛠️
+
+_Menciona las herramientas que utilizaste para crear tu proyecto_
+
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
+* [Maven](https://maven.apache.org/) - Manejador de dependencias
+* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
+
+## Contribuyendo 🖇️
+
+Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
+
+## Versionado 📌
+
+Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
+
+## Autor ✒️
+
+* **Luis Alfaro** - *Test destacame.cl* - [lalfaro1704](https://github.com/lalfaro1704)
+
+## Licencia 📄
 
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
      :target: https://github.com/pydanny/cookiecutter-django/
      :alt: Built with Cookiecutter Django
 
+Este proyecto está bajo :Licencia: MIT
 
-:License: MIT
+## Gratitud 🎁
 
-
-Settings
---------
-
-Moved to settings_.
-
-.. _settings: http://cookiecutter-django.readthedocs.io/en/latest/settings.html
-
-Basic Commands
---------------
-
-Setting Up Your Users
-^^^^^^^^^^^^^^^^^^^^^
-
-* To create a **normal user account**, just go to Sign Up and fill out the form. Once you submit it, you'll see a "Verify Your E-mail Address" page. Go to your console to see a simulated email verification message. Copy the link into your browser. Now the user's email should be verified and ready to go.
-
-* To create an **superuser account**, use this command::
-
-    $ python manage.py createsuperuser
-
-For convenience, you can keep your normal user logged in on Chrome and your superuser logged in on Firefox (or similar), so that you can see how the site behaves for both kinds of users.
-
-Type checks
-^^^^^^^^^^^
-
-Running type checks with mypy:
-
-::
-
-  $ mypy travel_destacame
-
-Test coverage
-^^^^^^^^^^^^^
-
-To run the tests, check your test coverage, and generate an HTML coverage report::
-
-    $ coverage run -m pytest
-    $ coverage html
-    $ open htmlcov/index.html
-
-Running tests with py.test
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-::
-
-  $ pytest
-
-Live reloading and Sass CSS compilation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Moved to `Live reloading and SASS compilation`_.
-
-.. _`Live reloading and SASS compilation`: http://cookiecutter-django.readthedocs.io/en/latest/live-reloading-and-sass-compilation.html
-
-
-
-
-
-Deployment
-----------
-
-The following details how to deploy this application.
-
-
-
-Docker
-^^^^^^
-
-See detailed `cookiecutter-django Docker documentation`_.
-
-.. _`cookiecutter-django Docker documentation`: http://cookiecutter-django.readthedocs.io/en/latest/deployment-with-docker.html
-
-
-
+* Gracias a destacame.cl por darme la oportunidad 🍺 🤓

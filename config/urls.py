@@ -1,12 +1,20 @@
 from django.conf import settings
-from django.urls import include, path
+from django.urls import include, path, re_path
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title='Documentation for RinnoManager')
+app_name = "travel_destacame"
+
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+    path(
+        "",
+        TemplateView.as_view(template_name="pages/home.html"), name="home"
+    ),
     path(
         "about/",
         TemplateView.as_view(template_name="pages/about.html"),
@@ -21,6 +29,11 @@ urlpatterns = [
     ),
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
+    path(
+        "travel/",
+        include(("travel_destacame.travel.urls", "travel"), namespace="travel"),
+    ),
+    path("docs/", schema_view),
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
 )
