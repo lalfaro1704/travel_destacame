@@ -1,6 +1,6 @@
 import coreapi
 
-from django.db.models import Count, OuterRef, Subquery, FloatField, F
+from django.db.models import Count, OuterRef, Subquery, FloatField, F, IntegerField
 from django.utils.translation import ugettext_lazy as _
 
 from rest_framework import viewsets, status
@@ -8,10 +8,10 @@ from rest_framework.response import Response
 from rest_framework.filters import BaseFilterBackend, OrderingFilter
 
 # my models here
-from travel_destacame.travel.models import (Bus, Location, Trip, Ticket)
+from travel_destacame.travel.models import (Bus, Location, Trip, Ticket, Driver)
 
 # my serializers here
-from .serializers import (BusSerializer, TripSerializer, TripStatsSerializer, BusStatsSerializer)
+from .serializers import (BusSerializer, TripSerializer, TripStatsSerializer, BusStatsSerializer, DriverSerializer)
 
 
 class BusFilterBackend(BaseFilterBackend):
@@ -47,9 +47,10 @@ class TripFilterBackend(BaseFilterBackend):
         ]
 
     def filter_queryset(self, request, queryset, view):
-        from_location = request.GET.get('from_location', None)
-        if from_location:
-            return queryset.filter(from_location__name__icontains=from_location.upper())
+        distinct = request.GET.get('distinct', None)
+
+        if distinct:
+            return queryset.distinct("from_location","to_location")
 
         return queryset
 
@@ -64,6 +65,11 @@ class TripViewSet(viewsets.ModelViewSet):
     queryset = Trip.objects.all()
     serializer_class = TripSerializer
     filter_backends = [TripFilterBackend]
+
+
+class DriverViewSet(viewsets.ModelViewSet):
+    queryset = Driver.objects.all()
+    serializer_class = DriverSerializer
 
 
 class TripStatsViewSet(viewsets.ReadOnlyModelViewSet):
@@ -92,7 +98,7 @@ class TripStatsViewSet(viewsets.ReadOnlyModelViewSet):
         ).annotate(
             dcount=Count('id')
         ).annotate(
-            promedio=Subquery(tickets_query, output_field=FloatField()) / F('dcount')
+            promedio=Subquery(tickets_query, output_field=IntegerField()) / F('dcount')
         )
 
         serializer = self.serializer_class(trips, many=True)
@@ -118,8 +124,8 @@ class BusStatsViewSet(viewsets.ReadOnlyModelViewSet):
         )
 
         """ internal queryset """
-        trips = Trip.objects.annotate(
-            capacidad_vendida=Subquery(tickets_query, output_field=FloatField())
+        trips = Trip.objects.annotate(seats=Count('bus__seats')).annotate(
+            capacidad_vendida=Subquery(tickets_query, output_field=IntegerField()) * 100 / F('seats')
         ).filter(capacidad_vendida__isnull=False)
 
         serializer = self.serializer_class(trips, many=True)

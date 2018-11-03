@@ -3,6 +3,7 @@ Base settings to build other settings files upon.
 """
 
 import environ
+from corsheaders.defaults import default_headers
 
 ROOT_DIR = environ.Path(__file__) - 3  # (travel_destacame/config/settings/base.py - 3 = travel_destacame/)
 APPS_DIR = ROOT_DIR.path('travel_destacame')
@@ -33,6 +34,13 @@ USE_I18N = True
 USE_L10N = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
+
+# CORS
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ALLOW_HEADERS = default_headers + (
+    'authpayload',
+)
 
 # DATABASES
 # ------------------------------------------------------------------------------
@@ -69,6 +77,7 @@ THIRD_PARTY_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_swagger',
+    'corsheaders',  # django-cors-headers
 ]
 LOCAL_APPS = [
     'travel_destacame.users.apps.UsersAppConfig',
@@ -129,6 +138,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#middleware
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

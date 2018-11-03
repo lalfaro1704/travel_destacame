@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 # my models here
-from travel_destacame.travel.models import (Bus, Seat, Location, Trip, Driver)
+from travel_destacame.travel.models import (Bus, Seat, Location, Trip, Driver, Ticket)
 
 
 class SeatSerializer(serializers.ModelSerializer):
@@ -40,10 +40,25 @@ class DriverSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class TicketSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Ticket
+        fields = '__all__'
+
+
 class TripSerializer(serializers.ModelSerializer):
     from_location = LocationSerializer()
     to_location = LocationSerializer()
     driver = DriverSerializer()
+    bus = BusSerializer()
+    bookings = serializers.SerializerMethodField()
+
+    def get_bookings(self, obj):
+        bookings = Ticket.objects.filter(trip=obj)
+        serializer = TicketSerializer(bookings, many=True)
+
+        return serializer.data
 
     class Meta:
         model = Trip
@@ -53,6 +68,7 @@ class TripSerializer(serializers.ModelSerializer):
 class TripStatsSerializer(serializers.BaseSerializer):
 
     def to_representation(self, obj):
+
         return {
             'from': obj['from_location__name'].capitalize(),
             'to': obj['to_location__name'].capitalize(),
@@ -63,9 +79,10 @@ class TripStatsSerializer(serializers.BaseSerializer):
 class BusStatsSerializer(serializers.BaseSerializer):
 
     def to_representation(self, obj):
+
         return {
-            'bus': BusSerializer(obj.bus).data,
-            'capacidad_vendida': obj.capacidad_vendida
+            'trayecto': TripSerializer(obj).data,
+            'capacidad_vendida': '{}%'.format(obj.capacidad_vendida)
         }
 
 

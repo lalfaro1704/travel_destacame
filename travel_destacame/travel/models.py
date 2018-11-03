@@ -189,7 +189,7 @@ class Trip(models.Model):
 
     def __str__(self):
         return "{}-{} {}".format(
-            self.from_location, self.from_location, self.departure
+            self.from_location, self.to_location, self.departure
         )
 
 
