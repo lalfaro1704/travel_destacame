@@ -59,15 +59,18 @@ Variables de entorno y variables globales ⚙️
 ============================================
 
 * Mac: ::
+
 	$ source .envs/.local/.django; export $(grep -v '^#' .envs/.local/.django | xargs -0)
 
 * Debian: ::
+
 	$ source .envs/.local/.django; export $(grep -v '^#' .env/local.sh | xargs -d '\n')
 
 Deployment 📦
 =============
 
 * Base de datos ::
+
 	* Mac:
 		$ createdb travel
 
@@ -77,9 +80,11 @@ Deployment 📦
 	$ ./manage.py migrate
 
 * dependencias del proyecto: ::
+
 	$ pip install -r requirements/local.txt
 
 * superusuario y token de acceso: ::
+
 	$ ./manage.py createsuperuser
 		Username:
 		Email address:
@@ -89,16 +94,19 @@ Deployment 📦
 	$ ./manage.py drf_create_token <USERNAME_CREADO>
 
 * Datos iniciales de la base de datos: ::
+
 	$ ./manage.py loaddata travel_destacame/users/fixtures/*.json
 	$ ./manage.py loaddata travel_destacame/travel/fixtures/*.json
 
 * runserver: ::
+
 	$ ./manage.py runserver
 
 Versionado 📌
 =============
 
 * Git: ::
+
 	* https://github.com/lalfaro1704/travel_destacame.git
 
 Autor ✒️
